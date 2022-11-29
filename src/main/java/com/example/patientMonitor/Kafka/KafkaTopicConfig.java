@@ -5,14 +5,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaTopicConfig {
+    /*Topic creation for Patient monitor producer */
     @Bean
     public NewTopic patientMonitorTopic(){
-        return TopicBuilder.name("Telemetrysimulator")
-                .build();
+        return TopicBuilder.name("observationTelemetry").build();
     }
-//    @Bean
-//    public NewTopic patientTopic(){
-//        return TopicBuilder.name("Observationstart")
-//                .build();
-//    }
+    /* topic creation for Patient monitor consumer*/
+   @Bean
+   public NewTopic patientTopic(){
+        return TopicBuilder.name("ObservationStart").build();
+    }
 }
